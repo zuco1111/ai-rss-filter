@@ -99,3 +99,6 @@ groups:
 ```
 ## 使用
 服务运行后，处理后的RSS订阅地址为： `127.0.0.1:8000/rss/组名` 
+
+## ⭐ Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=zuco1111/ai-rss-filter&type=Date)](https://star-history.com/#zuco1111/ai-rss-filter&Date)
