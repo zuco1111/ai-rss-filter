@@ -1,4 +1,4 @@
-# ai-rss-filter
+# AI-RSS-Filter
 
 ## Description
 This is a tool used to filter and merge RSS information sources. It will deduplicate the content with the same title in the first and then use LLM to filter out the content you don't want to see. In the last, it will generate a summary for each piece of content.
