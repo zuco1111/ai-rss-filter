@@ -99,3 +99,7 @@ groups:
 ```
 ## Usage
 Once upon you start docker server, the procceed RSS subscription link is `127.0.0.1:8000/rss/group_name`
+
+## ⭐ Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=zuco1111/ai-rss-filter&type=Date)](https://star-history.com/#zuco1111/ai-rss-filter&Date)
+
