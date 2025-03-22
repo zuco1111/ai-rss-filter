@@ -1,0 +1,95 @@
+"""
+示例配置文件
+"""
+# 全局配置
+global:
+  # 数据存储配置
+  data_dir: "./data"
+  # 数据保留天数
+  data_retention_days: 90
+  # 缓存配置
+  cache:
+    memory_enabled: true
+    file_enabled: true
+    db_enabled: true
+    memory_ttl: 3600  # 秒
+    file_ttl: 86400   # 秒
+    db_ttl: 604800    # 秒
+
+# LLM 配置
+llm:
+  # 默认提供商
+  default_provider: "openai"
+  # OpenAI 配置
+  openai:
+    api_key: ""
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-3.5-turbo"
+  # Gemini 配置
+  gemini:
+    api_key: ""
+    base_url: "https://generativelanguage.googleapis.com/v1"
+    model: "gemini-pro"
+  # Claude 配置
+  claude:
+    api_key: ""
+    base_url: "https://api.anthropic.com/v1"
+    model: "claude-2"
+  # Ollama 配置
+  ollama:
+    base_url: "http://localhost:11434/api"
+    model: "llama2"
+  # Deepseek 配置
+  deepseek:
+    api_key: ""
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+  # Azure 配置
+  azure:
+    api_key: ""
+    base_url: ""
+    deployment_id: ""
+    api_version: "2023-05-15"
+
+# Web 服务配置
+web:
+  host: "0.0.0.0"
+  port: 8000
+
+# RSS 组配置
+groups:
+  # 36氪热榜
+  36kr_hot:
+    # RSS 源 URL
+    urls:
+      - "https://rsshub.app/36kr/hot-list"
+    # 处理频率（分钟）
+    interval: 60
+    # 去重配置
+    deduplication:
+      enabled: true
+      days: 3
+    # LLM 过滤配置
+    filter:
+      enabled: true
+      provider: "openai"  # 可选，覆盖默认提供商
+      prompt: "只保留与人工智能、大模型相关的文章"
+    # 摘要生成配置
+    summary:
+      enabled: true
+      provider: "openai"  # 可选，覆盖默认提供商
+      max_length: 150
+  
+  # 少数派Matrix
+  sspai_matrix:
+    urls:
+      - "https://rsshub.app/sspai/matrix"
+    interval: 30
+    deduplication:
+      enabled: true
+      days: 2
+    filter:
+      enabled: true
+      prompt: "只保留与科技产品评测相关的文章"
+    summary:
+      enabled: false
