@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ai-rss-filter:
-    image: zuco1111/ai-rss-filter:latest  # 改为从DockerHub拉取镜像
+    image: zuco1111/ai-rss-filter:amd64  # 从DockerHub拉取镜像
     container_name: ai-rss-filter
     restart: always
     ports:
