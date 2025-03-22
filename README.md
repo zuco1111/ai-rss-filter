@@ -9,6 +9,7 @@ git clone https://github.com/zuco1111/ai-rss-filter.git
 cd ai-rss-filter
 docker compose up -d
 ```
+If you are running this porject in ARM64 architecture device, please edit `docker-compose.yml` file, replace `latest` tag with `arm64`
 
 ## Configuration
 ```
