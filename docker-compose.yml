@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  ai-rss-filter:
+    image: zuco1111/ai-rss-filter:latest  # 改为从DockerHub拉取镜像
+    container_name: ai-rss-filter
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/app/config
+      - ./data:/data
+    environment:
+      - AI_RSS_FILTER_CONFIG=/app/config/config.yaml
+      - AI_RSS_FILTER_DATA_DIR=/data
+      - TZ=Asia/Shanghai
+      # 可以在这里设置API密钥，或者在config.yaml中设置
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - GEMINI_API_KEY=${GEMINI_API_KEY}
+      # - CLAUDE_API_KEY=${CLAUDE_API_KEY}
+      # - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      # - AZURE_API_KEY=${AZURE_API_KEY}
+      # - AZURE_ENDPOINT=${AZURE_ENDPOINT}
+      # - AZURE_DEPLOYMENT_ID=${AZURE_DEPLOYMENT_ID}
