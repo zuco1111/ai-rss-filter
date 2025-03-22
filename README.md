@@ -1,4 +1,5 @@
 # AI-RSS-Filter
+[中文](https://github.com/zuco1111/ai-rss-filter/blob/main/README_ZH.md)
 
 ## Description
 This is a tool used to filter and merge RSS information sources. It will deduplicate the content with the same title in the first and then use LLM to filter out the content you don't want to see. In the last, it will generate a summary for each piece of content.
@@ -17,7 +18,7 @@ cd config
 cp config.yaml.example config.yaml
 ```
 
-## Configuration documentation
+## Configuration Documentation
 ```
 global:
   # Which path do you want to store the data in
@@ -75,7 +76,7 @@ web:
 
 # RSS Group
 groups:
-  # Example
+  # Group1，`36kr_hot` is the group name
   36kr_hot:
     # RSS URL
     urls:
@@ -83,7 +84,7 @@ groups:
       - "http://example.com/36kr"
     # Processing frequency (minutes) 
     interval: 60
-    # Deduplication
+    # Deduplication (Content with the same title in the past three days will be deduplicated)
     deduplication:
       enabled: true
       days: 3
@@ -96,3 +97,5 @@ groups:
       enabled: true
       max_length: 150
 ```
+## Usage
+Once upon you start docker server, the procceed RSS subscription link is `127.0.0.1:8000/rss/group_name`
