@@ -1,0 +1,16 @@
+# AI RSS Filter 项目依赖
+
+# 核心依赖
+pyyaml>=6.0
+feedparser>=6.0.0
+feedgen>=0.9.0
+flask>=2.0.0
+apscheduler>=3.9.0
+requests>=2.28.0
+
+# 缓存
+pickle-mixin>=1.0.2
+
+# 工具
+python-dotenv>=0.20.0
+werkzeug>=2.0.0
